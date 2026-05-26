@@ -5,7 +5,7 @@ const T = {
   yellow: "#FACC15",
   fuchsia: "#D946EF",
 };
-function Contact({ dark }) {
+function Contact({ dark }:{dark: boolean}) {
   const bg = dark ? "bg-[#060614] text-white" : "bg-[#f0f4ff] text-[#0a0a1a]";
   const input = dark ? "bg-white/5 border-white/15 text-white placeholder:text-white/30 focus:border-[#0E49FF]" : "bg-white border-[#0E49FF]/20 text-black placeholder:text-black/30 focus:border-[#0E49FF]";
  

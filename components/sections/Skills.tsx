@@ -6,7 +6,7 @@ const T = {
   yellow: "#FACC15",
   fuchsia: "#D946EF",
 };
-export default function Skills({ dark }) {
+export default function Skills({ dark }:{dark: boolean}) {
   const bg = dark ? "bg-[#060614] text-white" : "bg-[#f0f4ff] text-[#0a0a1a]";
   const muted = dark ? "text-white/60" : "text-black/55";
  

@@ -50,7 +50,7 @@ const INITIAL_PROJECTS = [
   },
 ];
 
-function SectionHeading({ title }) {
+function SectionHeading({ title }:{title: string}) {
   return (
     <div className="flex items-center gap-3 mb-2">
       <span className="h-px w-8 bg-[#0E49FF]" />
@@ -60,7 +60,7 @@ function SectionHeading({ title }) {
 }
 
 /* ── Project Card ── */
-function ProjectCard({ project, onClick, dark }) {
+function ProjectCard({ project, onClick, dark }: { project: any; onClick: (project: any) => void; dark: boolean }) {
   const cardBg = dark ? "bg-white/[0.04] border-white/10 hover:border-white/25" : "bg-white border-[#0E49FF]/12 hover:border-[#0E49FF]/35";
   const muted = dark ? "text-white/55" : "text-black/50";
 
@@ -91,7 +91,7 @@ function ProjectCard({ project, onClick, dark }) {
       <p className={`mt-1.5 text-xs ${muted} line-clamp-2`}>{project.description}</p>
 
       <div className="mt-4 flex flex-wrap gap-1.5">
-        {project.tags.map((t) => (
+        {project.tags.map((t: string) => (
           <span
             key={t}
             className={`rounded-full border px-2.5 py-1 text-[10px] font-medium ${dark ? "border-white/15 text-white/55" : "border-[#0E49FF]/15 text-[#0E49FF]/60"}`}
@@ -109,7 +109,7 @@ function ProjectCard({ project, onClick, dark }) {
 }
 
 /* ── Detail Drawer ── */
-function ProjectDetail({ project, onClose, dark }) {
+function ProjectDetail({ project, onClose, dark }: { project: any; onClose: () => void; dark: boolean }) {
   if (!project) return null;
   const muted = dark ? "text-white/60" : "text-black/55";
   const pill = dark ? "border-white/15 bg-white/5 text-white/70" : "border-[#0E49FF]/15 bg-[#0E49FF]/5 text-[#0E49FF]/70";
@@ -179,7 +179,7 @@ function ProjectDetail({ project, onClose, dark }) {
           <div>
             <p className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-3 ${muted}`}>Tools Used</p>
             <div className="flex flex-wrap gap-2">
-              {project.tools.map((t) => (
+              {project.tools.map((t:string) => (
                 <span key={t} className={`rounded-full border px-3.5 py-1.5 text-xs font-medium ${pill}`}>{t}</span>
               ))}
             </div>
@@ -189,7 +189,7 @@ function ProjectDetail({ project, onClose, dark }) {
           <div>
             <p className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-3 ${muted}`}>Deliverables</p>
             <div className="space-y-2">
-              {project.deliverables.map((d, i) => (
+              {project.deliverables.map((d: string, i: number) => (
                 <div key={d} className="flex items-center gap-3">
                   <span className="h-5 w-5 rounded-full text-[10px] font-black flex items-center justify-center flex-shrink-0 text-white" style={{ backgroundColor: project.color }}>
                     {i + 1}
@@ -204,7 +204,7 @@ function ProjectDetail({ project, onClose, dark }) {
           <div>
             <p className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-3 ${muted}`}>Tags</p>
             <div className="flex flex-wrap gap-2">
-              {project.tags.map((t) => (
+              {project.tags.map((t: string) => (
                 <span key={t} className={`rounded-full border px-3.5 py-1.5 text-xs font-medium ${pill}`}>{t}</span>
               ))}
             </div>
@@ -229,14 +229,16 @@ function ProjectDetail({ project, onClose, dark }) {
 }
 
 /* ── Add Project Modal ── */
-function AddProjectModal({ onClose, onAdd, dark }) {
+function AddProjectModal({ onClose, onAdd, dark }: { onClose: () => void; onAdd: (project: any) => void; dark: boolean }) {
   const [form, setForm] = useState({
     title: "", category: "Branding", year: new Date().getFullYear().toString(),
     client: "", tags: "", thumbnail: "🎨", color: "#0E49FF",
     description: "", tools: "", deliverables: "", duration: "", link: "",
   });
 
-  const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+  // const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+  const set = (k: string, v: string) =>
+  setForm((f) => ({ ...f, [k]: v }));
 
   const handleAdd = () => {
     if (!form.title.trim() || !form.description.trim()) return;
@@ -401,7 +403,7 @@ function AddProjectModal({ onClose, onAdd, dark }) {
 /* ────────────────────────────────────────────────
    MAIN PROJECTS SECTION
 ──────────────────────────────────────────────── */
-export default function Projects({ dark = true }) {
+export default function Projects({ dark }:{dark: boolean}) {
   const [projects, setProjects] = useState(INITIAL_PROJECTS);
   const [activeCategory, setActiveCategory] = useState("All");
   const [selected, setSelected] = useState(null);

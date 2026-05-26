@@ -6,7 +6,11 @@ const T = {
   yellow: "#FACC15",
   fuchsia: "#D946EF",
 };
-function Navbar({ dark, toggleTheme }) {
+type NavbarProps = {
+  dark: boolean;
+  toggleTheme: () => void;
+};
+function Navbar({ dark, toggleTheme }:NavbarProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
  

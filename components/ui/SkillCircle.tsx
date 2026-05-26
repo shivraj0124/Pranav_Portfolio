@@ -10,7 +10,7 @@ const T = {
   fuchsia: "#D946EF",
 };
 
-export default function SkillCircle({ title, value, accent, dark }) {
+export default function SkillCircle({ title, value, accent, dark }:{ title: string; value: number; accent: string; dark: boolean }) {
   const r = 44;
   const circ = 2 * Math.PI * r;
   const offset = circ - (value / 100) * circ;

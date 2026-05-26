@@ -4,7 +4,7 @@ const T = {
   yellow: "#FACC15",
   fuchsia: "#D946EF",
 };
-export default function About({ dark }) {
+export default function About({ dark }:{ dark: boolean }) {
   const bg = dark ? "bg-[#0a0a1a] text-white" : "bg-white text-[#0a0a1a]";
   const card = dark ? "border-white/10 bg-white/[0.03]" : "border-[#0E49FF]/12 bg-[#0E49FF]/[0.03]";
   const muted = dark ? "text-white/60" : "text-black/55";

@@ -5,7 +5,7 @@ const T = {
   yellow: "#FACC15",
   fuchsia: "#D946EF",
 };
-export default function Hero({ dark }) {
+export default function Hero({ dark }:{dark: boolean}) {
   return (
     <section id="home" className={`relative min-h-screen overflow-hidden ${dark ? "bg-[#060614] text-white" : "bg-[#f0f4ff] text-[#0a0a1a]"}`}>
       {/* Grid */}
