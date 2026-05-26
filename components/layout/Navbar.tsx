@@ -85,7 +85,7 @@ function Navbar({ dark, toggleTheme }:NavbarProps) {
       </div>
  
       {/* Mobile drawer */}
-      <div className={`md:hidden overflow-hidden transition-all duration-400 ${open ? "max-h-80" : "max-h-0"}`}>
+      <div className={`md:hidden overflow-hidden transition-all duration-400 ${open ? "max-h-100" : "max-h-0"}`}>
         <div className={`flex flex-col gap-1 px-5 pb-5 pt-2 ${dark ? "bg-[#0a0a1a]/95" : "bg-white/95"}`}>
           {links.map((l) => (
             <a
