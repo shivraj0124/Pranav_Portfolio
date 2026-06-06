@@ -20,7 +20,7 @@ function Navbar({ dark, toggleTheme }:NavbarProps) {
     return () => window.removeEventListener("scroll", fn);
   }, []);
  
-  const links = ["Home", "About", "Skills","Projects", "Experience", "Contact"];
+  const links = ["Home", "About", "Skills","Work", "Experience", "Contact"];
  
   const navBg = dark
     ? scrolled ? "bg-[#0a0a1a]/90 border-white/10 shadow-[0_4px_40px_rgba(14,73,255,0.15)]" : "bg-transparent border-transparent"

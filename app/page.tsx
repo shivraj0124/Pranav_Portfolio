@@ -8,7 +8,7 @@ import Experience from "@/components/sections/Experience";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 import { useTheme } from "../context/useTheme";
-import Projects from "@/components/sections/Projects";
+import Projects from "@/components/sections/Works";
 export default function App() {
   const { dark, toggle } = useTheme();
 

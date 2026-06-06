@@ -414,7 +414,7 @@ export default function Projects({ dark }:{dark: boolean}) {
   const muted = dark ? "text-white/60" : "text-black/55";
 
   return (
-    <section id="projects" className={`relative overflow-hidden py-24 ${bg}`}>
+    <section id="work" className={`relative overflow-hidden py-24 ${bg}`}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
         * { font-family: 'Syne', sans-serif; }
@@ -432,7 +432,7 @@ export default function Projects({ dark }:{dark: boolean}) {
         {/* Header row */}
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
-            <SectionHeading title="Projects" />
+            <SectionHeading title="Work" />
             <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
               Projects I've{" "}
               <span className="italic text-yellow-400">brought to life.</span>
